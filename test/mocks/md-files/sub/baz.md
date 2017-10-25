@@ -1,0 +1,7 @@
+---
+title: Baz
+---
+
+# Baz
+
+*QUX*

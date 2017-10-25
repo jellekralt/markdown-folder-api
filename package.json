@@ -1,0 +1,24 @@
+{
+  "name": "markdown-folder-api",
+  "version": "0.1.0",
+  "description": "Creates an api from a folder with markdown files",
+  "main": "src/MarkdownFolder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "folder",
+    "api"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "author": "Jelle Kralt",
+  "license": "MIT",
+  "dependencies": {
+    "front-matter": "^2.2.0",
+    "marked": "^0.3.6",
+    "recursive-readdir": "^2.2.1"
+  }
+}
