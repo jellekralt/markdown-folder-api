@@ -4,7 +4,7 @@
   "description": "Creates an api from a folder with markdown files",
   "main": "src/MarkdownFolder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "markdown",
@@ -20,5 +20,20 @@
     "front-matter": "^2.2.0",
     "marked": "^0.3.6",
     "recursive-readdir": "^2.2.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellekralt/markdown-folder-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jellekralt/markdown-folder-api/issues"
+  },
+  "homepage": "https://github.com/jellekralt/markdown-folder-api#readme"
 }
