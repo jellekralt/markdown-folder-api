@@ -12,4 +12,23 @@ npm i markdown-folder-api
 yarn add markdown-folder-api
 ```
 
+## Usage
+```js
+let mdFiles = new MarkdownFolder({
+  path: '/folder/path'
+});
+
+mdFiles.on('load', () => {
+  // Get all files
+  let allFiles = mdFiles.getAll();
+  // Get single file
+  let someFile = mdFile.get('fileName');
+  // Get single file in a subfolder
+  let anotherFile = mdFile.get('folderName/fileName');
+});
+
+```
+
+## Disclaimer
+
 ***This software is currently BETA quality, use at your own risk***
