@@ -1,6 +1,6 @@
 {
   "name": "markdown-folder-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates an api from a folder with markdown files",
   "main": "src/MarkdownFolder.js",
   "scripts": {
@@ -19,7 +19,8 @@
   "dependencies": {
     "front-matter": "^2.2.0",
     "marked": "^0.3.6",
-    "recursive-readdir": "^2.2.1"
+    "recursive-readdir": "^2.2.1",
+    "slugify": "^1.2.1"
   },
   "directories": {
     "test": "test"

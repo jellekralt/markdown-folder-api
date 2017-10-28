@@ -5,11 +5,16 @@ const fs = require('fs');
 const recursive = require('recursive-readdir');
 const fm = require('front-matter');
 const marked = require('marked');
+const slugify = require('slugify');
 
 const readDir = promisify(recursive);
 const readFile = promisify(fs.readFile);
 
 const MemoryStore = require('./stores/MemoryStore');
+
+const defaults = {
+  slugify: false
+};
 
 class MarkdownFolder extends EventEmitter {
 
@@ -25,6 +30,8 @@ class MarkdownFolder extends EventEmitter {
     } else {
       this.store = new MemoryStore();
     }
+
+    this.options = Object.assign({}, defaults, options);
 
     this.loadFolder(options.path)
       .then(() => this.emit('load'))
@@ -60,6 +67,10 @@ class MarkdownFolder extends EventEmitter {
       let parsedPath = parse(current.filePath);
       let base = parsedPath.dir.replace(rootPath, '').replace(/^\//, '');
       let ref = `${base}${base ? '/' : ''}${parsedPath.name}`;
+
+      if (this.options.slugify) {
+        ref = ref.split('/').map(part => slugify(part, { lower: true })).join('/');
+      }
 
       result[ref] = current;
       

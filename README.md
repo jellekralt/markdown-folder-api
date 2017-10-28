@@ -29,6 +29,18 @@ mdFiles.on('load', () => {
 
 ```
 
+## Options
+```js
+new MarkdownFolder({
+  // Absolute folder path (String)
+  path: '/folder/path'
+  // Switch to enable / disable slugifying the folder / filename (Boolean) 
+  // Default: false
+  slugify: true
+});
+
+```
+
 ## Disclaimer
 
 ***This software is currently BETA quality, use at your own risk***

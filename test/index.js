@@ -10,7 +10,8 @@ describe('MarkdownFolder', function() {
 
   beforeEach(function() {
     mdFiles = new MarkdownFolder({
-      path: resolve(__dirname, 'mocks/md-files')
+      path: resolve(__dirname, 'mocks/md-files'),
+      slugify: true
     });
   });
 
@@ -25,7 +26,7 @@ describe('MarkdownFolder', function() {
   describe('#getAll', function() {
     it('should return all posts', function(done) {
       mdFiles.on('load', () => {
-        Object.keys(mdFiles.getAll()).should.have.length(3);
+        Object.keys(mdFiles.getAll()).should.have.length(4);
         done();
       });
     });
@@ -46,6 +47,20 @@ describe('MarkdownFolder', function() {
         let post = mdFiles.get('notfound');
 
         should.not.exist(post);
+        done();
+      });
+    });
+
+    it('should slugify the file and pathnames when the slugify option is set', function(done) {
+      mdFiles = new MarkdownFolder({
+        path: resolve(__dirname, 'mocks/md-files'),
+        slugify: true
+      });
+
+      mdFiles.on('load', () => {
+        let post = mdFiles.get('sub/another-sub/foo-bar_baz');
+
+        should.exist(post);
         done();
       });
     });
