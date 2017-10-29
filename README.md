@@ -29,6 +29,20 @@ mdFiles.on('load', () => {
 
 ```
 
+## File structure
+```js
+{
+  "data": "...", // Raw file data
+  "filePath": "...", // Absolute file path
+  "attributes": {
+    ... // All attributes from the front matter
+  },
+  "body": "...", // Body of the file, without the front matter
+  "frontmatter": "...", // Raw front matter
+  "html": "..." // Generated HTML
+}
+```
+
 ## Options
 ```js
 new MarkdownFolder({
