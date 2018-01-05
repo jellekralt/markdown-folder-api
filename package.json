@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "front-matter": "^2.2.0",
-    "marked": "^0.3.6",
+    "marked": "^0.3.9",
     "recursive-readdir": "^2.2.1",
     "slugify": "^1.2.1"
   },
